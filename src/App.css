@@ -11,32 +11,39 @@
 
 /* Estilos para o corpo da página */
 body {
-  background: #28262c;
+  background: #1A1A1A;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Ocupa a altura total da tela */
+  min-height: 100vh;
 }
 
 /* Estilos do componente App */
 .App {
   text-align: center;
+  max-width: 800px; /* Reduz a largura máxima para evitar uma aparência muito ampla */
+  background: #282828; /* Fundo mais escuro */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra ligeiramente mais intensa */
+  color: #fff;
+  margin: 2rem;
 }
 
 /* Estilos para o título h1 */
 h1 {
   color: #fff;
-  margin-bottom: 0.5rem;
-  font-size: 1.75rem;
+  margin-bottom: 1.5rem; /* Aumenta a margem inferior para melhor separação */
+  font-size: 2.5rem; /* Aumenta o tamanho do título */
 }
 
 /* Estilos do contêiner de tarefas */
 .TodoWrapper {
-  background: #292929;
-  margin-top: 2rem; /* Reduz a margem superior para um visual mais compacto */
+  background: #333;
   padding: 2rem;
-  border-radius: 10px; /* Aumenta o raio da borda para um visual mais arredondado */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra para destacar o contêiner */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  margin-top: 2rem;
 }
 
 /* Estilos para o formulário de adição de tarefas */
@@ -44,25 +51,25 @@ h1 {
   width: 100%;
   margin-bottom: 1rem;
   display: flex;
-  justify-content: space-between; /* Alinha o botão com o input */
+  justify-content: space-between;
 }
 
 /* Estilos para a entrada de texto da tarefa */
 .todo-input {
   outline: none;
-  background: none;
+  background: #333;
   border: 1px solid #8758ff;
-  padding: 0.5rem 1rem;
+  padding: 0.7rem 1rem; /* Aumenta o preenchimento para destacar o input */
   margin-top: 1rem;
   margin-bottom: 2rem;
-  width: 100%; /* Preenche a largura do contêiner */
+  width: 100%;
   color: #fff;
-  border-radius: 5px; /* Adiciona uma borda arredondada para combinar com o estilo */
+  border-radius: 5px;
 }
 
 /* Estilos para o espaço reservado da entrada de texto da tarefa */
 .todo-input::placeholder {
-  color: #ffffff4d;
+  color: #888;
 }
 
 /* Estilos para o botão de adicionar tarefa */
@@ -70,9 +77,9 @@ h1 {
   background: #8758ff;
   color: #fff;
   border: none;
-  padding: 0.55rem 1rem;
+  padding: 0.7rem 1rem; /* Aumenta o preenchimento para combinar com o input */
   cursor: pointer;
-  border-radius: 5px; /* Adiciona uma borda arredondada para combinar com o estilo */
+  border-radius: 5px;
 }
 
 /* Estilos para as tarefas individuais */
@@ -80,12 +87,12 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #8758ff;
+  background: #282828; /* Fundo mais escuro para um visual consistente */
   color: #fff;
-  padding: 0.75rem 1rem;
-  border-radius: 5px; /* Adiciona uma borda arredondada para combinar com o estilo */
+  padding: 1rem;
+  border-radius: 5px;
   margin-bottom: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra para destacar as tarefas */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Estilos para o ícone de lixeira */
