@@ -1,38 +1,113 @@
+/* Importa a fonte "Poppins" do Google Fonts para ser usada em todo o aplicativo */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Estilos globais para reset de margens, preenchimento e uso da caixa de borda */
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos para o corpo da página */
+body {
+  background: #28262c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ocupa a altura total da tela */
+}
+
+/* Estilos do componente App */
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Estilos para o título h1 */
+h1 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Estilos do contêiner de tarefas */
+.TodoWrapper {
+  background: #292929;
+  margin-top: 2rem; /* Reduz a margem superior para um visual mais compacto */
+  padding: 2rem;
+  border-radius: 10px; /* Aumenta o raio da borda para um visual mais arredondado */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra para destacar o contêiner */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Estilos para o formulário de adição de tarefas */
+.TodoForm {
+  width: 100%;
+  margin-bottom: 1rem;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between; /* Alinha o botão com o input */
+}
+
+/* Estilos para a entrada de texto da tarefa */
+.todo-input {
+  outline: none;
+  background: none;
+  border: 1px solid #8758ff;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  width: 100%; /* Preenche a largura do contêiner */
+  color: #fff;
+  border-radius: 5px; /* Adiciona uma borda arredondada para combinar com o estilo */
+}
+
+/* Estilos para o espaço reservado da entrada de texto da tarefa */
+.todo-input::placeholder {
+  color: #ffffff4d;
+}
+
+/* Estilos para o botão de adicionar tarefa */
+.todo-btn {
+  background: #8758ff;
+  color: #fff;
+  border: none;
+  padding: 0.55rem 1rem;
+  cursor: pointer;
+  border-radius: 5px; /* Adiciona uma borda arredondada para combinar com o estilo */
+}
+
+/* Estilos para as tarefas individuais */
+.Todo {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: #8758ff;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 5px; /* Adiciona uma borda arredondada para combinar com o estilo */
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra para destacar as tarefas */
 }
 
-.App-link {
-  color: #61dafb;
+/* Estilos para o ícone de lixeira */
+.fa-trash {
+  margin-left: 0.75rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Estilos para as tarefas incompletas */
+.incompleted {
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Estilos para as tarefas completas */
+.completed {
+  color: #c5aeff;
+  text-decoration: line-through;
+  cursor: pointer;
+}
+
+/* Estilos para ícones de edição e exclusão */
+.edit-icon,
+.delete-icon {
+  cursor: pointer;
 }
