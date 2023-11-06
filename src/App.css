@@ -1,7 +1,5 @@
-/* Importa a fonte "Poppins" do Google Fonts para ser usada em todo o aplicativo */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-/* Estilos globais para reset de margens, preenchimento e uso da caixa de borda */
 * {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -9,112 +7,86 @@
   box-sizing: border-box;
 }
 
-/* Estilos para o corpo da página */
 body {
-  background: #1A1A1A;
+  background: #2a292b;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
 }
 
-/* Estilos do componente App */
 .App {
   text-align: center;
-  max-width: 800px; /* Reduz a largura máxima para evitar uma aparência muito ampla */
-  background: #282828; /* Fundo mais escuro */
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra ligeiramente mais intensa */
-  color: #fff;
-  margin: 2rem;
 }
 
-/* Estilos para o título h1 */
 h1 {
   color: #fff;
-  margin-bottom: 1.5rem; /* Aumenta a margem inferior para melhor separação */
-  font-size: 2.5rem; /* Aumenta o tamanho do título */
+  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
 }
 
-/* Estilos do contêiner de tarefas */
 .TodoWrapper {
-  background: #333;
+  background: #252527;
+  margin-top: 5rem;
   padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  margin-top: 2rem;
-}
-
-/* Estilos para o formulário de adição de tarefas */
-.TodoForm {
-  width: 100%;
-  margin-bottom: 1rem;
-  display: flex;
-  justify-content: space-between;
-}
-
-/* Estilos para a entrada de texto da tarefa */
-.todo-input {
-  outline: none;
-  background: #333;
-  border: 1px solid #8758ff;
-  padding: 0.7rem 1rem; /* Aumenta o preenchimento para destacar o input */
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  width: 100%;
-  color: #fff;
   border-radius: 5px;
 }
 
-/* Estilos para o espaço reservado da entrada de texto da tarefa */
-.todo-input::placeholder {
-  color: #888;
+.TodoForm {
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
-/* Estilos para o botão de adicionar tarefa */
+.todo-input {
+  outline: none;
+  background: none;
+  border: 1px solid #8758ff;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  width: 300px;
+  color: #fff;
+}
+
+.todo-input::placeholder {
+  color: #ffffff4d;
+}
+
 .todo-btn {
   background: #8758ff;
   color: #fff;
   border: none;
-  padding: 0.7rem 1rem; /* Aumenta o preenchimento para combinar com o input */
+  padding: 0.55rem;
   cursor: pointer;
-  border-radius: 5px;
 }
 
-/* Estilos para as tarefas individuais */
 .Todo {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #282828; /* Fundo mais escuro para um visual consistente */
+  background: #8758ff;
   color: #fff;
-  padding: 1rem;
+  padding: 0.75rem 1rem;
   border-radius: 5px;
   margin-bottom: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilos para o ícone de lixeira */
 .fa-trash {
   margin-left: 0.75rem;
 }
 
-/* Estilos para as tarefas incompletas */
 .incompleted {
   color: #fff;
   cursor: pointer;
 }
 
-/* Estilos para as tarefas completas */
 .completed {
   color: #c5aeff;
   text-decoration: line-through;
   cursor: pointer;
 }
 
-/* Estilos para ícones de edição e exclusão */
 .edit-icon,
 .delete-icon {
   cursor: pointer;
 }
+ 
