@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Aplicação To-Do List em React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este é um aplicativo To-Do List simples construído com React que permite aos usuários adicionar, editar, marcar como concluído e excluir tarefas. Os dados das tarefas são armazenados no Local Storage, o que permite que os usuários visualizem e mantenham suas tarefas mesmo após a atualização da página.
 
-## Available Scripts
+## Funcionalidades
 
-In the project directory, you can run:
+- Adicionar uma nova tarefa.
+- Marcar tarefas como concluídas ou não concluídas.
+- Editar o nome de uma tarefa existente.
+- Excluir tarefas.
+- Limpar o histórico de tarefas armazenadas no Local Storage.
 
-### `npm start`
+## Como Iniciar
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Siga estas etapas para executar a aplicação em sua máquina local:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Certifique-se de que você tenha o [Node.js](https://nodejs.org/) instalado.
 
-### `npm test`
+2. Clone este repositório:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```bash
+   git clone https://github.com/VitorHmaia/todo-react-app
 
-### `npm run build`
+3. Navegue até o diretório do projeto:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+     ```
+    cd todo-list-react
+4. Instale as dependências do projeto:
+    ```
+    npm install
+5. Inicie o servidor de desenvolvimento:
+    ```
+    npm start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+A aplicação estará disponível em http://localhost:3000 no seu navegador.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Persistência de Dados
+Os dados das tarefas são armazenados localmente no Local Storage do navegador. Isso significa que as tarefas serão mantidas mesmo após a atualização da página ou o fechamento do navegador.
 
-### `npm run eject`
+## Estrutura do Projeto
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+`src/App.jsx`: Componente principal que renderiza o aplicativo.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`src/components/TodoWrapper.jsx`: Componente que gerencia a lista de tarefas e fornece funcionalidades de adição, edição, exclusão e marcação como concluído.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+`src/components/TodoForm.jsx`: Componente de formulário para adicionar novas tarefas.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+`src/components/EditTodoForm.jsx`: Componente de formulário para editar tarefas existentes.
 
-## Learn More
+`src/components/Todo.jsx`: Componente que exibe uma tarefa individual.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`src/components/TodoWrapperLocalStorage.jsx`: Componente que salva os dados no LocalStorage do navegador.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
