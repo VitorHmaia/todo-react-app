@@ -1,5 +1,12 @@
 import React, { useState } from "react";
 
+/**
+ * Componente `TodoForm` é responsável por adicionar novas tarefas à lista.
+ *
+ * @param {function} addTodo - Função chamada para adicionar uma nova tarefa à lista.
+ *
+ * @returns {JSX.Element} - Um elemento JSX que representa o formulário de adição de tarefas.
+ */
 export const TodoForm = ({ addTodo }) => {
   const [value, setValue] = useState(""); // Define um estado local 'value' e uma função 'setValue' para atualizá-lo.
 
