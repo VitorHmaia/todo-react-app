@@ -24,7 +24,7 @@ Siga estas etapas para executar a aplicação em sua máquina local:
 3. Navegue até o diretório do projeto:
 
      ```
-    cd todo-list-react
+    cd todo-react-app
 4. Instale as dependências do projeto:
     ```
     npm install
