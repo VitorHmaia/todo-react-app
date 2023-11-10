@@ -18,7 +18,7 @@ export const TodoForm = ({ addTodo }) => {
       addTodo(value); // Chama a função 'addTodo' passando o valor do campo como argumento.
 
       setValue(""); // Limpa o campo após a submissão.
-
+      
       // Persiste a tarefa no LocalStorage.
       const savedTodos = JSON.parse(localStorage.getItem("todos")) || []; // Recupera os todos salvos no LocalStorage ou inicializa um array vazio.
       const newTodo = {

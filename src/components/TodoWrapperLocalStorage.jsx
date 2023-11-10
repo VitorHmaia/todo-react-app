@@ -3,27 +3,25 @@ import { TodoForm } from './TodoForm';
 import { v4 as uuidv4 } from 'uuid';
 import { Todo } from './Todo';
 import { EditTodoForm } from './EditTodoForm';
-
 uuidv4();
 
-/**
- * Componente `TodoWrapperLocalStorage` é responsável por gerenciar uma lista de tarefas com persistência no LocalStorage.
- *
- * @returns {JSX.Element} - Um elemento JSX que representa a aplicação To-Do com LocalStorage.
- */
-export const TodoWrapperLocalStorage = () => {
-  // Define o estado 'todos' para armazenar a lista de tarefas.
+const TodoWrapperLocalStorage = () => {
+  /**
+   * Componente `TodoWrapperLocalStorage` gerencia uma lista de tarefas com persistência no LocalStorage.
+   *
+   * @returns {JSX.Element} - Um elemento JSX que representa a aplicação To-Do com LocalStorage.
+   */
+  // Estado para armazenar a lista de tarefas.
   const [todos, setTodos] = useState([]);
 
-  // Efeito colateral que carrega os todos do LocalStorage ao montar o componente.
+  // Efeito que carrega os todos do LocalStorage ao montar o componente.
   useEffect(() => {
-    // Função para carregar os todos do LocalStorage.
     const loadTodosFromLocalStorage = () => {
       const savedTodos = JSON.parse(localStorage.getItem('todos')) || [];
       setTodos(savedTodos);
     };
 
-    loadTodosFromLocalStorage(); // Carrega os todos ao montar o componente.
+    loadTodosFromLocalStorage();
   }, []);
 
   // Função para atualizar os todos no estado e no LocalStorage.
@@ -74,13 +72,13 @@ export const TodoWrapperLocalStorage = () => {
       <h1>Get Things Done!</h1>
       <TodoForm addTodo={addTodo} />
       {/* Mapeia a lista de todos para renderizar cada tarefa ou formulário de edição. */}
-      {todos.map((todo, index) =>
+      {todos.map((todo) =>
         todo.isEditing ? (
           <EditTodoForm editTodo={editTask} task={todo} key={todo.id} />
         ) : (
           <Todo
+            key={todo.id}
             task={todo}
-            key={todo.id} // Chave única para renderização eficiente.
             toggleComplete={toggleComplete}
             deleteTodo={deleteTodo}
             editTodo={editTodo}
@@ -90,3 +88,5 @@ export const TodoWrapperLocalStorage = () => {
     </div>
   );
 };
+
+export default TodoWrapperLocalStorage;

@@ -3,6 +3,9 @@ import { TodoForm } from "./TodoForm";
 import { Todo } from "./Todo";
 import { EditTodoForm } from "./EditTodoForm";
 import { v4 as uuidv4 } from "uuid";
+import { ToastContainer, toast } from 'react-toastify';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import 'react-toastify/dist/ReactToastify.css'; // Importa os estilos padrão do react-toastify.
 
 // Recupera a lista de tarefas inicial do LocalStorage ou inicializa um array vazio.
 const initialTodos = JSON.parse(localStorage.getItem("todos")) || [];
@@ -21,6 +24,11 @@ export const TodoWrapper = () => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
+  // Função para exibir notificações.
+  const notify = (message) => {
+    toast(message, { position: "bottom-right", autoClose: 5000 });
+  };
+
   // Função para adicionar uma nova tarefa à lista.
   const addTodo = (todoText) => {
     const newTodo = {
@@ -30,11 +38,13 @@ export const TodoWrapper = () => {
       isEditing: false,
     };
     setTodos([...todos, newTodo]);
+    notify('Tarefa adicionada com sucesso!');
   };
 
   // Função para excluir uma tarefa da lista.
   const deleteTodo = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
+    notify('Tarefa excluída com sucesso!');
   };
 
   // Função para alternar o status de conclusão de uma tarefa.
@@ -53,6 +63,7 @@ export const TodoWrapper = () => {
         todo.id === id ? { ...todo, isEditing: !todo.isEditing } : todo
       )
     );
+    notify('Estado da tarefa alterado com sucesso!');
   };
 
   // Função para editar o texto de uma tarefa.
@@ -62,26 +73,35 @@ export const TodoWrapper = () => {
         todo.id === id ? { ...todo, task: editedTask, isEditing: false } : todo
       )
     );
+    notify('Tarefa editada com sucesso!');
   };
 
   return (
-    <div className="TodoWrapper">
-      <h1>To Do List</h1>
+    <div className='TodoWrapper'>
+      <h1>To do List!</h1>
       <TodoForm addTodo={addTodo} />
-      {/* Mapeia a lista de todos para renderizar cada tarefa ou formulário de edição. */}
-      {todos.map((todo) =>
-        todo.isEditing ? (
-          <EditTodoForm editTodo={editTask} task={todo} key={todo.id} />
-        ) : (
-          <Todo
-            key={todo.id}
-            task={todo}
-            deleteTodo={() => deleteTodo(todo.id)}
-            editTodo={() => editTodo(todo.id)}
-            toggleComplete={() => toggleComplete(todo.id)}
-          />
-        )
-      )}
+
+      {/* Utiliza TransitionGroup para agrupar as transições */}
+      <TransitionGroup>
+        {/* Mapeia a lista de todos para renderizar cada tarefa ou formulário de edição */}
+        {todos.map((todo) => (
+          <CSSTransition key={todo.id} timeout={500} classNames="slide">
+            {todo.isEditing ? (
+              <EditTodoForm editTodo={editTask} task={todo} />
+            ) : (
+              <Todo
+                task={todo}
+                toggleComplete={toggleComplete}
+                deleteTodo={deleteTodo}
+                editTodo={editTodo}
+              />
+            )}
+          </CSSTransition>
+        ))}
+      </TransitionGroup>
+      {/* Componente do react-toastify para exibir notificações. */}
+      <ToastContainer />
     </div>
   );
 };
+
